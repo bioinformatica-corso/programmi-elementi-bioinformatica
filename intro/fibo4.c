@@ -1,18 +1,24 @@
 /* Compile with:
- * make fibo CFLAGS="-g -Wall -std=gnu11 -O3"
- * */
+   make fibo CFLAGS="-g -Wall -std=gnu11 -O3"
+   Mostly taken from 21st Century C (Ben Klemens)
+*/
 #include <stdio.h>
+#include <stdlib.h>
 
-long long int fibonacci(){
-        static long long int first = 1;
-        static long long int second = 1;
-        long long int out = first + second;
+unsigned long long int fibonacci(void);
+
+unsigned long long int fibonacci() {
+        static unsigned long long int first = 1;
+        static unsigned long long int second = 1;
+        unsigned long long int out = first + second;
         first = second;
         second = out;
         return out;
 }
 
-int main(){
-        for (int i=0; i< 50; i++)
-        printf("%lli\n", fibonacci());
+int main(int argc, char **argv) {
+        unsigned int limit = atoi(argv[1]);
+        for (unsigned int n = 0; n < limit; n++)
+                printf("%d ", fibonacci());
+        printf("\n");
 }
