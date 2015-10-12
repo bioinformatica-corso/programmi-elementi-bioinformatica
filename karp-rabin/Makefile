@@ -1,4 +1,4 @@
-# Makefile for Constrained Persistent Perfect Phylogeny
+# Makefile for Karp-Rabin
 P = karp-rabin
 
 CFLAGS_STD = -g -Wall -DDEBUG -O3 -march=native -Wno-deprecated -Wno-parentheses -Wno-format
