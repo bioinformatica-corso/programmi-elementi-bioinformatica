@@ -24,7 +24,6 @@
 #include <stdbool.h>
 #include <assert.h>
 #include <string.h>
-#include "miller-rabin/sprp32.h"
 #include "cmdline.h"
 #include "klib/kseq.h"
 #include <zlib.h>
