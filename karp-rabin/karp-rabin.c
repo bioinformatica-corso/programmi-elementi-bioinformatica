@@ -36,6 +36,7 @@ static uint32_t random_prime(gsl_rng* generator) {
         while (!primep(p)) {
                 p = 2 * gsl_rng_uniform_int(generator, 2 << 29) + 1;
         }
+        assert(p < 2<<30);
         return p;
 }
 
@@ -103,7 +104,7 @@ int main(int argc, char **argv) {
                         for (size_t c = 0; c < 4; c++)
                                 corrections[c] = (j == 0) ? c : (corrections[c] << 2) % mod;
                 uint32_t pattern_h = init_h(pattern, m, mod);
-                uint32_t pos = m - 1;
+                uint32_t pos = m;
                 for (uint32_t text_h = init_h(text, m, mod); pos < n;
                      text_h = next_h(text_h, text[pos - m], text[pos], mod), pos++)
                         if (pattern_h == text_h)
