@@ -55,11 +55,11 @@ static bool primep(const uint32_t n) {
   with 32-bit integers, since the alphabet ACGT can be represented with 2 bits.
 */
 static uint32_t random_prime(gsl_rng* generator) {
-        uint32_t p = 2 * gsl_rng_uniform_int(generator, 2 << 29) + 1;
-        while (!primep(p)) {
-                p = 2 * gsl_rng_uniform_int(generator, 2 << 29) + 1;
-        }
-        assert(p < 2<<30);
+        uint32_t p = 0;
+        do {
+                p = 2 * gsl_rng_uniform_int(generator, 1 << 29) + 1;
+        } while (p < (1 << 16) || !primep(p));
+        assert(p < (1<<30));
         return p;
 }
 
