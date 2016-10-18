@@ -131,7 +131,7 @@ int main(int argc, char **argv) {
                 for (uint32_t text_h = init_h(text, m, mod); pos < n;
                      text_h = next_h(text_h, text[pos - m], text[pos], mod), pos++)
                         if (pattern_h == text_h)
-                                occ[pos - m + 1]++;
+                                occ[pos - m]++;
         }
         for (uint32_t pos = 0; pos < n; pos++)
                 if (occ[pos] >= num_rounds) {
