@@ -25,7 +25,7 @@ static inline int min(int a, int b) {
 }
 
 /* compares a pattern (a string) and a suffix of the text, by extracting the prefix of
-   the text with same length as the patter. The return value is:
+   the text with same length as the pattern. The return value is:
    = 0 if the pattern is equal the prefix
    < 0 if the pattern precedes the prefix (in lexicographical order)
    > 0 if the pattern follows  the prefix (in lexicographical order)
