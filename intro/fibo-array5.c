@@ -40,7 +40,7 @@ int main(int argc, char **argv) {
         uint32_t limit = atoi(argv[1]);
         uint32_t size = 0;
         uint32_t* results = fibo_array(&size, limit);
-        for (uint32_t n = 0; results[n] > 0; n++)
+        for (uint32_t n = 0; n < size; n++)
                 printf("%" PRIu32 ": %" PRIu32 "\n", n + 1, results[n]);
         free(results);
 }

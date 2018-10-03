@@ -28,7 +28,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <inttypes.h>
-
+void fibo(uint32_t x);
 /**
    \brief Prints the fibonacci sequence up to a certain value \c limit
    \param x: counter
