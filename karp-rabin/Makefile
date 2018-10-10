@@ -16,19 +16,7 @@ CC_FULL = $(CC) $(CFLAGS) -I$(SRC_DIR) -I$(LIB_DIR) $(CFLAGS_LIBS)
 bin: $(P) $(LIBS)
 
 $(P): $(P).c $(P).h $(LIBS)
-# $(P): $(OBJECTS)
-# 	@echo 'Linking $@'
-# 	@mkdir -p $(BIN_DIR)
-# 	$(CC_FULL) -o $@ $^ $(LDLIBS)
-
-# all: $(P) doc check
-# 	echo $(OBJECTS)
-
-# ${OBJ_DIR}/%.o: $(SRC_DIR)/%.c $(LIBS)
-# 	@echo '* Compiling $<'
-# 	@mkdir -p $(dir $@)
-# 	$(CC_FULL) -MM -MF $(patsubst %.c,%.d,$<)  -MT $@ $<
-# 	$(CC_FULL) -o $@ -c $<
+	
 
 clean:
 	@echo "Cleaning..."
