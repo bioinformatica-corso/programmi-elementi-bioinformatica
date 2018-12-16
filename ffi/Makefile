@@ -1,6 +1,6 @@
 #
 # GPLv2
-OBJECTS: substring substring.o substrings.so
+OBJECTS: substring substring.o substrings.so substringcython.c
 bin: $(P) $(OBJECTS)
 P = substring
 CFLAGS_STD = -g -Wall -O3 -march=native -Wno-deprecated -Wno-parentheses -Wno-format
@@ -19,6 +19,9 @@ clean:
 
 test: run-tests.sh $(P)
 	./run-tests.sh
+
+substringcython.c: substringcython.pyx setup.py
+	python setup.py build_ext --inplace
 
 .PHONY: clean
 
